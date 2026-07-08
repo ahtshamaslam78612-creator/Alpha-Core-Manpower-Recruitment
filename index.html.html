@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alpha Core — Global Recruitment & Workforce Solutions</title>
+<meta name="description" content="Alpha Core connects companies with the right talent across borders. Executive search, bulk hiring, contract staffing, overseas recruitment and HR consulting — serving clients in multiple countries.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy-900:#1a1440; --navy-800:#251a52; --navy-700:#302163;
+  --ivory:#f6f3ec; --ivory-alt:#efe9dc;
+  --ink:#14161a; --ink-soft:#5b5f6b;
+  --gold:#c9a227; --gold-bright:#e0bd45; --gold-soft:rgba(201,162,39,.16);
+  --teal:#2f6f63; --teal-soft:rgba(47,111,99,.15);
+  --aurora-1:#1a1440; --aurora-2:#3a1f6b; --aurora-3:#123f6b; --aurora-4:#0f6e64; --aurora-5:#6b2f6b; --aurora-6:#8a5a1f;
+  --line:rgba(20,22,26,.10); --line-dark:rgba(246,243,236,.14);
+  --radius-lg:26px; --radius-md:16px; --maxw:1220px;
+  --ease:cubic-bezier(.4,0,.2,1);
+  --display:'Fraunces', serif; --body:'Inter', -apple-system, sans-serif; --mono:'IBM Plex Mono', monospace;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+@media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto;} *{animation-duration:.001ms !important; transition-duration:.001ms !important;} }
+body{margin:0; font-family:var(--body); color:var(--ink); background:var(--ivory); line-height:1.5; overflow-x:hidden;}
+a{color:inherit; text-decoration:none;} img{max-width:100%; display:block;} ul{margin:0; padding:0; list-style:none;} h1,h2,h3,h4,p{margin:0;} button{font-family:inherit; cursor:pointer;}
+:focus-visible{outline:2px solid var(--gold); outline-offset:3px; border-radius:4px;}
+.wrap{max-width:var(--maxw); margin:0 auto; padding:0 28px;}
+.eyebrow{font-family:var(--mono); font-size:12.5px; font-weight:500; letter-spacing:.14em; color:var(--gold); text-transform:uppercase;}
+.eyebrow.on-dark{color:var(--gold-bright);}
+h1{font-family:var(--display); font-size:clamp(38px,5.6vw,74px); font-weight:600; letter-spacing:-0.01em; line-height:1.04;}
+h2{font-family:var(--display); font-size:clamp(30px,4vw,48px); font-weight:600; letter-spacing:-0.01em; line-height:1.1;}
+h3{font-family:var(--display); font-size:clamp(20px,2.2vw,25px); font-weight:600; line-height:1.25;}
+.lead{font-size:clamp(16.5px,1.6vw,19px); color:var(--ink-soft); line-height:1.65;}
+.lead.on-dark{color:rgba(246,243,236,.72);}
+.body-text{font-size:15.5px; color:var(--ink-soft); line-height:1.65;}
+.reveal{opacity:0; transform:translateY(22px); transition:opacity .7s var(--ease), transform .7s var(--ease);}
+.reveal.in{opacity:1; transform:translateY(0);}
+.center{text-align:center;}
+
+@keyframes auroraFlow{ 0%{background-position:0% 50%;} 50%{background-position:100% 50%;} 100%{background-position:0% 50%;} }
+.aurora{background-image:linear-gradient(120deg, var(--aurora-1), var(--aurora-2), var(--aurora-3), var(--aurora-4), var(--aurora-5), var(--aurora-6), var(--aurora-1)); background-size:400% 400%; animation:auroraFlow 24s ease-in-out infinite;}
+
+/* nav */
+.nav{position:fixed; top:0; left:0; right:0; z-index:1000; height:74px; display:flex; align-items:center; background:rgba(26,20,64,.62); backdrop-filter:saturate(180%) blur(18px); -webkit-backdrop-filter:saturate(180%) blur(18px); border-bottom:1px solid rgba(246,243,236,.08); transition:background .3s var(--ease);}
+.nav.scrolled{background:rgba(26,20,64,.92);}
+.nav .wrap{display:flex; align-items:center; justify-content:space-between; width:100%; gap:16px;}
+.brand{display:flex; align-items:center; gap:10px; font-family:var(--display); font-weight:600; font-size:19px; color:#fff; white-space:nowrap;}
+.brand .mark{width:34px; height:34px; border-radius:9px; background:linear-gradient(135deg,var(--gold),#8a6d16); display:flex; align-items:center; justify-content:center; font-family:var(--mono); font-weight:600; color:#0a0f1c; font-size:14px; flex:none;}
+.nav-links{display:flex; align-items:center; gap:30px;}
+.nav-links a{font-size:13.5px; font-weight:500; color:rgba(246,243,236,.75); transition:color .2s var(--ease); white-space:nowrap;}
+.nav-links a:hover, .nav-links a.active{color:#fff;}
+.nav-cta{background:var(--gold); color:#0a0f1c !important; padding:9px 20px; border-radius:980px; font-weight:600;}
+.nav-cta:hover{background:var(--gold-bright);}
+.nav-toggle{display:none; background:none; border:none; cursor:pointer; padding:6px;}
+.nav-toggle span{display:block; width:22px; height:2px; background:#fff; margin:5px 0; transition:.25s var(--ease);}
+@media (max-width:960px){
+  .nav-links{position:fixed; top:74px; left:0; right:0; flex-direction:column; align-items:stretch; gap:0; background:var(--navy-900); border-bottom:1px solid var(--line-dark); max-height:0; overflow:hidden; transition:max-height .35s var(--ease);}
+  .nav-links.open{max-height:480px; overflow-y:auto;}
+  .nav-links a{padding:16px 28px; border-bottom:1px solid var(--line-dark);}
+  .nav-cta{margin:16px 28px; text-align:center;}
+  .nav-toggle{display:block;}
+}
+
+/* buttons */
+.btn{display:inline-flex; align-items:center; gap:8px; padding:14px 26px; border-radius:980px; font-size:14.5px; font-weight:600; border:1px solid transparent; transition:transform .2s var(--ease), background .2s var(--ease), border-color .2s var(--ease), color .2s var(--ease);}
+.btn:hover{transform:translateY(-2px);}
+.btn-gold{background:var(--gold); color:#0a0f1c;}
+.btn-gold:hover{background:var(--gold-bright);}
+.btn-outline{border-color:rgba(246,243,236,.35); color:#fff;}
+.btn-outline:hover{border-color:#fff; background:rgba(255,255,255,.06);}
+.btn-dark{background:var(--ink); color:#fff;}
+.btn-dark:hover{background:#000;}
+
+/* hero */
+.hero{position:relative; min-height:100vh; display:flex; align-items:center; background:var(--navy-900); color:#fff; padding-top:74px; overflow:hidden;}
+.hero-bg{position:absolute; inset:0; z-index:0; background-image:linear-gradient(120deg, var(--aurora-1), var(--aurora-2), var(--aurora-3), var(--aurora-4), var(--aurora-5), var(--aurora-6), var(--aurora-1)); background-size:400% 400%; animation:auroraFlow 22s ease-in-out infinite;}
+.hero-grain{position:absolute; inset:0; z-index:1; pointer-events:none; opacity:.045; background-image:radial-gradient(rgba(255,255,255,.7) 1px, transparent 1px); background-size:3px 3px;}
+.hero .wrap{position:relative; z-index:5; display:grid; grid-template-columns:1.05fr .95fr; gap:60px; align-items:center; padding-top:60px; padding-bottom:60px;}
+.hero-tag{display:inline-flex; align-items:center; gap:8px; padding:7px 16px; border:1px solid rgba(201,162,39,.35); border-radius:980px; background:rgba(201,162,39,.08); font-family:var(--mono); color:var(--gold-bright); font-size:12px; font-weight:500; letter-spacing:.1em; text-transform:uppercase; margin-bottom:24px;}
+.hero h1{margin-bottom:22px;}
+.hero h1 .hl{color:var(--gold-bright); font-style:italic;}
+.hero .lead{max-width:480px; margin-bottom:36px;}
+.hero-ctas{display:flex; gap:16px; flex-wrap:wrap; margin-bottom:44px;}
+.hero-proof{display:flex; gap:34px; flex-wrap:wrap; border-top:1px solid rgba(246,243,236,.12); padding-top:26px;}
+.hero-proof .num{font-family:var(--mono); font-size:26px; font-weight:600; color:#fff;}
+.hero-proof .lbl{font-size:12.5px; color:rgba(246,243,236,.6); margin-top:3px;}
+@media (max-width:900px){
+  .hero .wrap{grid-template-columns:1fr; gap:44px; padding-top:44px; padding-bottom:48px; text-align:center;}
+  .hero .lead{margin-left:auto; margin-right:auto;}
+  .hero-ctas{justify-content:center;}
+  .hero-proof{justify-content:center;}
+  .route-board{max-width:380px;}
+}
+@media (max-width:480px){
+  .hero-proof{gap:22px;}
+  .route-board{max-width:300px;}
+}
+
+/* signature: global route board */
+.route-board{position:relative; width:100%; aspect-ratio:1/1; max-width:520px; margin:0 auto;}
+.route-board svg{width:100%; height:100%; overflow:visible;}
+.route-orbit{animation:orbitSpin 120s linear infinite; transform-origin:center; transform-box:fill-box;}
+@keyframes orbitSpin{ to{ transform:rotate(360deg); } }
+.route-node-inner{animation:counterSpin 120s linear infinite; transform-origin:center; transform-box:fill-box;}
+@keyframes counterSpin{ to{ transform:rotate(-360deg); } }
+.route-line{stroke:var(--gold); stroke-width:1.4; fill:none; opacity:.55; stroke-dasharray:6 7; animation:dashMove 3.2s linear infinite;}
+.route-line.alt{stroke:var(--teal); opacity:.45; animation-duration:4.4s; animation-direction:reverse;}
+@keyframes dashMove{ to{ stroke-dashoffset:-130; } }
+.route-hub{fill:var(--navy-800); stroke:var(--gold); stroke-width:1.5;}
+.route-hub-glow{fill:url(#hubGlow); }
+.route-node-bg{fill:#141d33; stroke:rgba(246,243,236,.18); stroke-width:1;}
+.route-node-pulse{fill:none; stroke:var(--gold); stroke-width:1; opacity:0; transform-origin:center; animation:pulseRing 2.6s ease-out infinite;}
+@keyframes pulseRing{ 0%{ opacity:.55; transform:scale(.7);} 100%{ opacity:0; transform:scale(1.9);} }
+.route-label{font-family:var(--mono); font-size:10.5px; fill:rgba(246,243,236,.85); font-weight:500;}
+.route-flag{font-size:15px;}
+.hub-label{font-family:var(--mono); font-size:11px; fill:var(--gold-bright); font-weight:600; letter-spacing:.06em;}
+
+/* flag marquee (ambient motion) */
+.flag-marquee{background:var(--navy-800); border-top:1px solid var(--line-dark); border-bottom:1px solid var(--line-dark); overflow:hidden; padding:14px 0;}
+.flag-marquee-track{display:flex; gap:38px; width:max-content; animation:marqueeScroll 40s linear infinite;}
+.flag-marquee:hover .flag-marquee-track{animation-play-state:paused;}
+.flag-marquee-item{display:flex; align-items:center; gap:8px; font-family:var(--mono); font-size:13px; color:rgba(246,243,236,.68); white-space:nowrap;}
+.flag-marquee-item .fl{font-size:19px;}
+@keyframes marqueeScroll{ from{ transform:translateX(0); } to{ transform:translateX(-50%); } }
+@media (max-width:600px){ .flag-marquee-track{animation-duration:26s;} }
+
+/* stats split-flap */
+.stats-band{position:relative; padding:56px 0; border-top:1px solid var(--line-dark); border-bottom:1px solid var(--line-dark); overflow:hidden;}
+.stats-band::before{content:""; position:absolute; inset:0; z-index:0; background-image:linear-gradient(120deg, var(--aurora-1), var(--aurora-3), var(--aurora-4), var(--aurora-2), var(--aurora-1)); background-size:300% 300%; animation:auroraFlow 28s ease-in-out infinite; opacity:.9;}
+.stats-band .wrap{position:relative; z-index:1;}
+.stats-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:24px;}
+@media (max-width:860px){ .stats-grid{grid-template-columns:repeat(2,1fr);} }
+.stat-card{text-align:center;}
+.flap{display:inline-flex; gap:4px; justify-content:center; margin-bottom:10px;}
+.flap-digit{font-family:var(--mono); font-size:clamp(28px,3.4vw,40px); font-weight:600; color:#fff; background:var(--navy-700); border:1px solid rgba(246,243,236,.14); border-radius:6px; padding:4px 8px; min-width:.9em; text-align:center;}
+.flap-suffix{font-family:var(--mono); font-size:clamp(22px,3vw,32px); font-weight:600; color:var(--gold-bright); align-self:center; margin-left:2px;}
+.stat-lbl{font-size:13px; color:rgba(246,243,236,.6); font-weight:500;}
+
+/* sections */
+section{padding:110px 0; position:relative;}
+.section-tight{padding:80px 0;}
+.on-dark{position:relative; color:#fff; overflow:hidden;}
+.on-dark::before{content:""; position:absolute; inset:0; z-index:0; background-image:linear-gradient(120deg, var(--aurora-1), var(--aurora-2), var(--aurora-5), var(--aurora-3), var(--aurora-1)); background-size:300% 300%; animation:auroraFlow 30s ease-in-out infinite;}
+.on-dark > .wrap{position:relative; z-index:1;}
+.section-head{max-width:660px; margin:0 auto 52px; text-align:center;}
+.section-head.left{margin:0 0 44px; text-align:left;}
+
+/* about */
+.about-grid{display:grid; grid-template-columns:.9fr 1.1fr; gap:64px; align-items:center;}
+@media (max-width:900px){ .about-grid{grid-template-columns:1fr;} }
+.about-media{position:relative; border-radius:var(--radius-lg); overflow:hidden; aspect-ratio:4/5;}
+.about-media img{width:100%; height:100%; object-fit:cover;}
+.about-media-badge{position:absolute; bottom:18px; left:18px; right:18px; background:rgba(10,15,28,.82); backdrop-filter:blur(8px); border-radius:14px; padding:16px 18px; color:#fff; display:flex; align-items:center; gap:12px;}
+.about-media-badge .n{font-family:var(--mono); font-size:22px; font-weight:600; color:var(--gold-bright);}
+.about-media-badge .l{font-size:12px; color:rgba(246,243,236,.65);}
+.about-points{display:grid; gap:18px; margin-top:28px;}
+.about-point{display:flex; gap:14px; align-items:flex-start;}
+.about-point .ic{width:36px; height:36px; border-radius:10px; background:var(--gold-soft); color:var(--gold); display:flex; align-items:center; justify-content:center; font-size:16px; flex:none;}
+.about-point .t{font-weight:600; font-size:15px; margin-bottom:3px;}
+.about-point .d{font-size:14px; color:var(--ink-soft);}
+
+/* services */
+.grid{display:grid; gap:22px;}
+.grid-3{grid-template-columns:repeat(3,1fr);}
+.grid-2{grid-template-columns:repeat(2,1fr);}
+@media (max-width:980px){ .grid-3{grid-template-columns:repeat(2,1fr);} }
+@media (max-width:640px){ .grid-3,.grid-2{grid-template-columns:1fr;} }
+.svc-card{background:#fff; border:1px solid var(--line); border-radius:var(--radius-md); padding:30px 26px; transition:transform .35s var(--ease), box-shadow .35s var(--ease), border-color .35s var(--ease); position:relative; overflow:hidden;}
+.svc-card::before{content:""; position:absolute; top:0; left:0; width:100%; height:3px; background:linear-gradient(90deg,var(--gold),var(--teal)); transform:scaleX(0); transform-origin:left; transition:transform .4s var(--ease);}
+.svc-card:hover{transform:translateY(-6px); box-shadow:0 24px 48px rgba(10,15,28,.10); border-color:transparent;}
+.svc-card:hover::before{transform:scaleX(1);}
+.svc-num{font-family:var(--mono); font-size:12.5px; color:var(--gold); font-weight:600; letter-spacing:.08em; margin-bottom:16px; display:block;}
+.svc-card h3{margin-bottom:10px;}
+.svc-card p{font-size:14.5px; color:var(--ink-soft); line-height:1.6;}
+
+/* countries */
+.countries-wrap{position:relative; color:#fff; overflow:hidden;}
+.countries-wrap::before{content:""; position:absolute; inset:0; z-index:0; background-image:linear-gradient(120deg, var(--aurora-1), var(--aurora-4), var(--aurora-2), var(--aurora-6), var(--aurora-1)); background-size:300% 300%; animation:auroraFlow 26s ease-in-out infinite;}
+.countries-wrap > .wrap{position:relative; z-index:1;}
+.flag-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:16px;}
+@media (max-width:860px){ .flag-grid{grid-template-columns:repeat(2,1fr);} }
+.flag-card{background:var(--navy-800); border:1px solid var(--line-dark); border-radius:16px; padding:22px 18px; text-align:center; transition:transform .3s var(--ease), border-color .3s var(--ease);}
+.flag-card:hover{transform:translateY(-5px) scale(1.02); border-color:var(--gold);}
+.flag-card .fl{font-size:34px; margin-bottom:10px; display:block;}
+.flag-card .cn{font-weight:600; font-size:14.5px; margin-bottom:2px;}
+.flag-card .ct{font-family:var(--mono); font-size:11px; color:rgba(246,243,236,.55);}
+
+/* global reach ticker */
+.ticker-section{position:relative; overflow:hidden; background:var(--ivory-alt);}
+.ticker-section::before{content:""; position:absolute; inset:-60%; background:conic-gradient(from 0deg, rgba(201,162,39,.14), transparent 25%, rgba(47,111,99,.14), transparent 55%, rgba(201,162,39,.14)); animation:tickerBgSpin 22s linear infinite; z-index:0;}
+@keyframes tickerBgSpin{ to{ transform:rotate(360deg); } }
+.ticker-section .wrap{position:relative; z-index:1;}
+.country-ticker{display:inline-flex; flex-direction:column; align-items:center; gap:12px; min-height:190px; justify-content:center; margin-top:38px;}
+.ticker-flag{font-size:clamp(52px,9vw,92px); line-height:1;}
+.ticker-name{font-family:var(--display); font-weight:600; font-size:clamp(20px,3vw,32px); letter-spacing:-.01em;}
+.ticker-flag.pop, .ticker-name.pop{animation:tickerPop .5s var(--ease);}
+@keyframes tickerPop{ 0%{ opacity:0; transform:translateY(16px) scale(.9) rotate(-3deg); } 60%{ opacity:1; transform:translateY(-2px) scale(1.04) rotate(1deg); } 100%{ opacity:1; transform:translateY(0) scale(1) rotate(0); } }
+.ticker-bar{width:180px; height:3px; background:var(--line); border-radius:3px; overflow:hidden; margin-top:6px;}
+.ticker-bar span{display:block; height:100%; width:0%; background:var(--gold); border-radius:3px;}
+.ticker-bar span.run{animation:tickerFill 1s linear;}
+@keyframes tickerFill{ from{ width:0%; } to{ width:100%; } }
+
+/* process */
+.process-row{display:grid; grid-template-columns:repeat(5,1fr); gap:18px;}
+@media (max-width:980px){ .process-row{grid-template-columns:repeat(2,1fr);} }
+@media (max-width:560px){ .process-row{grid-template-columns:1fr;} }
+.process-card{position:relative; padding-top:14px;}
+.process-num{font-family:var(--mono); font-size:34px; font-weight:600; color:var(--gold-soft); -webkit-text-stroke:1.4px var(--gold); color:transparent; margin-bottom:14px; display:block;}
+.process-card h3{font-size:17px; margin-bottom:8px;}
+.process-card p{font-size:13.5px; color:var(--ink-soft);}
+
+/* media banner */
+.media-row{display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:center;}
+@media (max-width:880px){ .media-row{grid-template-columns:1fr;} }
+.media-row img{border-radius:var(--radius-lg); width:100%; height:100%; object-fit:cover; aspect-ratio:5/4;}
+
+/* reviews */
+.testimonial-spotlight{position:relative; max-width:740px; margin:0 auto 48px; text-align:center; padding:40px 34px; border-radius:var(--radius-md); background:linear-gradient(135deg, var(--gold-soft), var(--teal-soft)); border:1px solid var(--line); min-height:130px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:16px;}
+.spotlight-quote{font-family:var(--display); font-size:19px; font-style:italic; line-height:1.55; color:var(--ink); transition:opacity .4s ease;}
+.spotlight-quote .who{display:block; margin-top:14px; font-family:var(--body); font-style:normal; font-size:13px; color:var(--ink-soft); font-weight:600;}
+.stars{display:flex; gap:3px; color:var(--gold); font-size:15px; justify-content:center;}
+.spotlight-dots{display:flex; gap:7px;}
+.spotlight-dots span{width:6px; height:6px; border-radius:50%; background:var(--line); cursor:pointer; transition:background .2s, transform .2s;}
+.spotlight-dots span.active{background:var(--gold); transform:scale(1.3);}
+.review-card{background:#fff; border:1px solid var(--line); border-radius:var(--radius-md); padding:24px; display:flex; flex-direction:column; gap:12px;}
+.review-who{display:flex; align-items:center; gap:10px; margin-top:auto; padding-top:6px;}
+.review-avatar{width:34px; height:34px; border-radius:50%; background:linear-gradient(135deg,var(--gold),var(--teal)); color:#fff; display:flex; align-items:center; justify-content:center; font-weight:600; font-size:13px;}
+.star-input{display:flex; gap:6px; cursor:pointer;}
+.star-input span{font-size:24px; color:#d8d3c4; transition:color .15s;}
+.star-input span.active{color:var(--gold);}
+.field{display:flex; flex-direction:column; gap:7px;}
+.field label{font-size:13px; font-weight:600; color:var(--ink-soft);}
+.field input, .field textarea{border:1px solid var(--line); border-radius:12px; padding:12px 15px; font-size:14.5px; background:var(--ivory-alt); color:var(--ink); font-family:inherit;}
+.field input:focus, .field textarea:focus{outline:none; border-color:var(--gold); box-shadow:0 0 0 4px var(--gold-soft);}
+.field textarea{resize:vertical; min-height:110px;}
+.form-status{font-size:14px; margin-top:2px; color:var(--teal); display:none;}
+.form-status.show{display:block;}
+.review-form{display:flex; flex-direction:column; gap:16px; background:var(--ivory-alt); border-radius:var(--radius-md); padding:28px;}
+@media (max-width:860px){ #reviewsLayout{grid-template-columns:1fr !important;} }
+
+/* cta band */
+.cta-band{border-radius:var(--radius-lg); padding:66px 40px; text-align:center; position:relative; overflow:hidden; background-image:linear-gradient(120deg, var(--aurora-1), var(--aurora-5), var(--aurora-3), var(--aurora-6), var(--aurora-2), var(--aurora-1)); background-size:300% 300%; animation:auroraFlow 20s ease-in-out infinite; color:#fff;}
+.cta-band::before{content:""; position:absolute; inset:0; background:radial-gradient(circle at 85% 20%, rgba(224,189,69,.22), transparent 55%); pointer-events:none;}
+.cta-band > *{position:relative; z-index:1;}
+.cta-band h2{margin-bottom:14px;} .cta-band .lead{margin-bottom:30px; max-width:520px; margin-left:auto; margin-right:auto;}
+
+/* footer */
+footer{background:var(--navy-900); color:rgba(246,243,236,.7); padding:56px 0 26px; font-size:13.5px;}
+.foot-grid{display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr; gap:34px;}
+@media (max-width:760px){ .foot-grid{grid-template-columns:1fr 1fr;} }
+.foot-grid h4{color:#fff; font-size:13px; font-weight:600; margin-bottom:16px; letter-spacing:.04em; text-transform:uppercase;}
+.foot-grid li{margin-bottom:10px;}
+.foot-grid a:hover{color:var(--gold-bright);}
+.foot-brand{display:flex; align-items:center; gap:10px; font-family:var(--display); font-weight:600; font-size:19px; color:#fff; margin-bottom:14px;}
+.foot-bottom{display:flex; justify-content:space-between; align-items:center; border-top:1px solid var(--line-dark); margin-top:40px; padding-top:22px; flex-wrap:wrap; gap:12px;}
+.social-row{display:flex; gap:12px;}
+.social-row a{width:34px; height:34px; border-radius:50%; background:var(--navy-800); border:1px solid var(--line-dark); display:flex; align-items:center; justify-content:center; color:#fff;}
+.social-row a:hover{border-color:var(--gold);}
+
+.divider{height:1px; background:var(--line); margin:56px 0;}
+.divider.on-dark{background:var(--line-dark);}
+
+/* whatsapp */
+.whatsapp-float{position:fixed; right:22px; bottom:22px; z-index:900; width:58px; height:58px; border-radius:50%; display:flex; align-items:center; justify-content:center; box-shadow:0 10px 26px rgba(0,0,0,.25); transition:transform .25s var(--ease); animation:waPulse 2.4s ease-in-out infinite;}
+.whatsapp-float:hover{transform:scale(1.08);}
+.whatsapp-float svg{width:34px; height:34px;}
+@keyframes waPulse{ 0%,100%{ box-shadow:0 10px 26px rgba(37,211,102,.35); } 50%{ box-shadow:0 10px 26px rgba(37,211,102,.6), 0 0 0 8px rgba(37,211,102,.14); } }
+@media (max-width:600px){ .whatsapp-float{right:16px; bottom:16px; width:52px; height:52px;} .whatsapp-float svg{width:30px; height:30px;} }
+.btn-whatsapp{background:#25D366; color:#fff !important;}
+.btn-whatsapp:hover{background:#1ebd59;}
+</style>
+</head>
+<body>
+
+<!-- ==================================================================
+     ⚙️ SETUP CHECKLIST — 3 things to configure before going live:
+
+     1) LOGO — search this file for "🔶 LOGO HERE" (there are 2 spots:
+        the nav bar and the footer). Replace the "AC" mark with your
+        own <img src="your-logo.png"> in both places.
+
+     2) CONTACT FORM EMAIL — search for "📧 EMAIL BACKEND SETUP" further
+        down in the <script>. Static HTML can't send email on its own,
+        so this uses EmailJS (free) as the delivery service. Until you
+        add your EmailJS keys, the form will fall back to opening the
+        visitor's own email app instead — it still works, just not
+        automatically.
+
+     3) WHATSAPP NUMBER — search this file for "🔶 WHATSAPP NUMBER HERE"
+        (there are 3 spots: floating button, CTA section, contact
+        section). Replace 92XXXXXXXXXX with your real number in
+        international format, no + sign, no spaces/dashes
+        (e.g. Pakistan number 03001234567 becomes 923001234567).
+     ================================================================== -->
+
+<!-- ============ NAV ============ -->
+<nav class="nav" id="siteNav">
+  <div class="wrap">
+    <a href="#home" class="brand">
+     <a href="#home" class="brand">
+    <img src="logo.png" alt="Logo"
+         style="width:34px;height:34px;border-radius:9px;object-fit:contain;">
+    <span>Alpha Core</span>
+</a>
+      <span class="mark">AC</span>
+      <span>Alpha Core</span>
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#countries">Countries</a>
+      <a href="#global">Global Reach</a>
+      <a href="#process">Process</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#contact" class="nav-cta">Request Talent</a>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header class="hero" id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-grain"></div>
+  <div class="wrap">
+    <div class="hero-left reveal in">
+      <span class="hero-tag">● Recruiting across <span class="country-count">8</span>+ countries worldwide</span>
+      <h1>We connect the right <span class="hl">people</span> with the right companies.</h1>
+      <p class="lead">Alpha Core is a global recruitment partner — sourcing, screening and placing talent for businesses across the Gulf, North America, the UK and beyond, so you hire faster and with confidence.</p>
+      <div class="hero-ctas">
+        <a href="#contact" class="btn btn-gold">Request Talent →</a>
+        <a href="#services" class="btn btn-outline">Explore Services</a>
+      </div>
+      <div class="hero-proof">
+        <div><div class="num" id="proofCountries"><span class="country-count">8</span>+</div><div class="lbl">Countries served</div></div>
+        <div><div class="num" id="proofPlacements">2,300+</div><div class="lbl">Candidates placed</div></div>
+        <div><div class="num" id="proofClients">180+</div><div class="lbl">Client companies</div></div>
+      </div>
+    </div>
+    <div class="hero-right reveal in">
+      <div class="route-board" id="routeBoard"></div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ FLAG MARQUEE (ambient motion strip) ============ -->
+<div class="flag-marquee" aria-hidden="true">
+  <div class="flag-marquee-track" id="flagMarqueeTrack"></div>
+</div>
+
+<!-- ============ STATS (split-flap) ============ -->
+<div class="stats-band">
+  <div class="wrap">
+    <div class="stats-grid" id="statsGrid">
+      <div class="stat-card">
+        <div class="flap" data-target="8" data-suffix="" id="flap1"></div>
+        <div class="stat-lbl">Countries served</div>
+      </div>
+      <div class="stat-card">
+        <div class="flap" data-target="2300" data-suffix="+" id="flap2"></div>
+        <div class="stat-lbl">Candidates placed</div>
+      </div>
+      <div class="stat-card">
+        <div class="flap" data-target="180" data-suffix="+" id="flap3"></div>
+        <div class="stat-lbl">Partner companies</div>
+      </div>
+      <div class="stat-card">
+        <div class="flap" data-target="21" data-suffix=" days" id="flap4"></div>
+        <div class="stat-lbl">Avg. time to shortlist</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ ABOUT ============ -->
+<section id="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="reveal">
+        <div class="about-media">
+          <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=900&q=80" alt="Alpha Core recruitment team in a meeting">
+          <div class="about-media-badge">
+            <div class="n">12</div>
+            <div class="l">Years connecting talent<br>with global employers</div>
+          </div>
+        </div>
+      </div>
+      <div class="reveal">
+        <p class="eyebrow">Who we are</p>
+        <h2 style="margin-top:12px;">A recruitment partner that treats every hire like it's the only one that matters.</h2>
+        <p class="body-text" style="margin-top:18px;">Alpha Core is an international staffing and recruitment company. We work on both sides of the hire — helping companies fill open roles with vetted, ready-to-work talent, and helping candidates find roles abroad without the guesswork of visas, contracts or relocation.</p>
+        <div class="about-points">
+          <div class="about-point">
+            <div class="ic">🌐</div>
+            <div><div class="t">Cross-border by default</div><div class="d">Every search accounts for visas, local labour law and relocation logistics from day one.</div></div>
+          </div>
+          <div class="about-point">
+            <div class="ic">✓</div>
+            <div><div class="t">Verified, not just interviewed</div><div class="d">Background checks, reference calls and document verification on every shortlisted candidate.</div></div>
+          </div>
+          <div class="about-point">
+            <div class="ic">⚡</div>
+            <div><div class="t">Built for speed</div><div class="d">A live shortlist within days, not a stack of resumes weeks later.</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section class="on-dark" id="services">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow on-dark">What we do</p>
+      <h2 style="margin-top:12px;">Recruitment services built around how you actually hire.</h2>
+      <p class="lead on-dark" style="margin-top:14px;">Six services, one accountable team — for single critical hires and workforce-scale projects alike.</p>
+    </div>
+    <div class="grid grid-3" id="servicesGrid"></div>
+  </div>
+</section>
+
+<!-- ============ FEATURE MEDIA ROW ============ -->
+<section>
+  <div class="wrap">
+    <div class="media-row">
+      <div class="reveal">
+        <p class="eyebrow">On the ground</p>
+        <h2 style="margin-top:12px;">Interviews that don't stall at a screen.</h2>
+        <p class="body-text" style="margin-top:16px;">Video screening gets a shortlist moving fast, but every offer is backed by document checks, reference calls and — where the role calls for it — an in-person or on-site interview local to the candidate.</p>
+      </div>
+      <div class="reveal">
+        <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1000&q=80" alt="Recruiter conducting a candidate interview">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ COUNTRIES ============ -->
+<section class="countries-wrap" id="countries">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow on-dark">Where we place talent</p>
+      <h2 style="margin-top:12px; color:#fff;">Active in <span class="country-count">8</span>+ countries, and growing.</h2>
+      <p class="lead on-dark" style="margin-top:14px;">Local knowledge of visas, contracts and labour law in every market we operate in.</p>
+    </div>
+    <div class="flag-grid" id="flagGrid"></div>
+  </div>
+</section>
+
+<!-- ============ GLOBAL REACH TICKER ============ -->
+<section class="ticker-section" id="global">
+  <div class="wrap center">
+    <p class="eyebrow">Live worldwide reach</p>
+    <h2 style="margin-top:12px;">Now placing talent in <span class="country-count">8</span>+ countries — and counting.</h2>
+    <p class="lead" style="margin-top:14px; max-width:520px; margin-left:auto; margin-right:auto;">Every second, we're working somewhere new. Here's where.</p>
+    <div class="country-ticker" id="countryTicker">
+      <div class="ticker-flag" id="tickerFlag">🇵🇰</div>
+      <div class="ticker-name" id="tickerName">Pakistan</div>
+      <div class="ticker-bar"><span id="tickerBarFill"></span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROCESS ============ -->
+<section id="process">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">How it works</p>
+      <h2 style="margin-top:12px;">From open role to signed offer, in five steps.</h2>
+    </div>
+    <div class="process-row" id="processRow"></div>
+  </div>
+</section>
+
+<!-- ============ MEDIA ROW 2 ============ -->
+<section class="alt" style="background:var(--ivory-alt);">
+  <div class="wrap">
+    <div class="media-row" style="direction:rtl;">
+      <div class="reveal" style="direction:ltr;">
+        <img src="https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?auto=format&fit=crop&w=1000&q=80" alt="Business handshake after a successful placement">
+      </div>
+      <div class="reveal" style="direction:ltr;">
+        <p class="eyebrow">For candidates</p>
+        <h2 style="margin-top:12px;">A job abroad, without the paperwork nightmare.</h2>
+        <p class="body-text" style="margin-top:16px;">We handle offer negotiation, contract review, visa filing and relocation briefings, so candidates arrive at a new country with a job, a plan and a point of contact — not just a plane ticket.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ REVIEWS ============ -->
+<section id="reviews">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Client & candidate voices</p>
+      <h2 style="margin-top:12px;">What it's like to hire — or get hired — through Alpha Core.</h2>
+    </div>
+
+    <div class="testimonial-spotlight reveal" id="testimonialSpotlight">
+      <div class="spotlight-quote" id="spotlightQuote"></div>
+      <div class="spotlight-dots" id="spotlightDots"></div>
+    </div>
+
+    <div class="grid" style="grid-template-columns:1fr 1.3fr; gap:40px; align-items:start;" id="reviewsLayout">
+      <form class="review-form reveal" id="reviewForm">
+        <h3>Share your experience</h3>
+        <div class="field">
+          <label>Your name</label>
+          <input type="text" id="reviewName" required placeholder="Jane Doe">
+        </div>
+        <div class="field">
+          <label>Rating</label>
+          <div class="star-input" id="starInput">
+            <span data-v="1">★</span><span data-v="2">★</span><span data-v="3">★</span><span data-v="4">★</span><span data-v="5">★</span>
+          </div>
+        </div>
+        <div class="field">
+          <label>Your review</label>
+          <textarea id="reviewMessage" required placeholder="Tell us how the hiring process went..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-dark" style="align-self:flex-start;">Submit review</button>
+        <p class="form-status" id="reviewStatus"></p>
+      </form>
+      <div class="grid grid-2" id="reviewsGrid" style="align-content:start;"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section>
+  <div class="wrap">
+    <div class="cta-band reveal">
+      <p class="eyebrow on-dark" style="color:var(--gold-bright);">Alpha Core</p>
+      <h2>Have a role to fill, or a career move in mind?</h2>
+      <p class="lead on-dark">Tell us what you need — we typically respond within one business day, wherever you are.</p>
+      <div class="hero-ctas" style="justify-content:center;">
+        <a href="#contact" class="btn btn-gold">Request Talent →</a>
+        <!-- 🔶 WHATSAPP NUMBER HERE: replace 92XXXXXXXXXX with your real number, international format, no + or spaces -->
+        <a href="https://wa.me/92XXXXXXXXXX?text=Hi%20Alpha%20Core%2C%20I%27d%20like%20to%20know%20more%20about%20your%20services." target="_blank" rel="noopener" class="btn btn-whatsapp">WhatsApp Us</a>
+        <a href="mailto:techsphere229@gmail.com" class="btn btn-outline">Email Us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section id="contact" style="background:var(--ivory-alt);">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Get in touch</p>
+      <h2 style="margin-top:12px;">Let's talk about your next hire.</h2>
+      <p class="lead" style="margin-top:14px;">Fill in a few details and our team will follow up with a shortlist timeline.</p>
+    </div>
+    <div class="grid grid-2 reveal" style="max-width:760px; margin:0 auto; gap:30px;">
+      <form class="review-form reveal" id="contactForm" style="grid-column:1/-1;">
+        <div class="grid grid-2" style="gap:16px;">
+          <div class="field">
+            <label>Full name</label>
+            <input type="text" id="cName" required placeholder="Your name">
+          </div>
+          <div class="field">
+            <label>Email</label>
+            <input type="email" id="cEmail" required placeholder="you@company.com">
+          </div>
+        </div>
+        <div class="field">
+          <label>What do you need?</label>
+          <textarea id="cMessage" required placeholder="Tell us about the role, or the opportunity you're looking for..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-dark" style="align-self:flex-start;">Send message</button>
+        <p class="form-status" id="contactStatus"></p>
+      </form>
+      <div class="body-text center" style="grid-column:1/-1;">
+        Or email us directly at <a href="mailto:techsphere229@gmail.com" style="color:var(--gold); font-weight:600;">techsphere229@gmail.com</a>
+        — or <!-- 🔶 WHATSAPP NUMBER HERE: replace 92XXXXXXXXXX --><a href="https://wa.me/92XXXXXXXXXX" target="_blank" rel="noopener" style="color:#25D366; font-weight:600;">message us on WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">
+          <!-- 🔶 LOGO HERE (footer): same idea, swap span.mark for an <img>. -->
+          <span class="mark">AC</span>
+          <span>Alpha Core</span>
+        </div>
+        <p style="max-width:260px;">A global recruitment partner connecting companies with talent across <span class="country-count">8</span>+ countries.</p>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">Executive Search</a></li>
+          <li><a href="#services">Bulk Recruitment</a></li>
+          <li><a href="#services">Contract Staffing</a></li>
+          <li><a href="#services">Overseas Recruitment</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#about">About us</a></li>
+          <li><a href="#countries">Countries</a></li>
+          <li><a href="#reviews">Reviews</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:techsphere229@gmail.com">techsphere229@gmail.com</a></li>
+        </ul>
+        <div class="social-row" style="margin-top:16px;">
+          <a href="mailto:techsphere229@gmail.com" aria-label="Email">✉️</a>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Alpha Core. All rights reserved.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- 🔶 WHATSAPP NUMBER HERE: replace 92XXXXXXXXXX with your real number, international format, no + or spaces -->
+<a class="whatsapp-float" href="https://wa.me/92XXXXXXXXXX?text=Hi%20Alpha%20Core%2C%20I%27d%20like%20to%20know%20more%20about%20your%20services." target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp">
+  <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><circle cx="16" cy="16" r="16" fill="#25D366"/><path d="M22.6 9.4a8.9 8.9 0 0 0-14.1 10.7L7 24l4.1-1.4a8.9 8.9 0 0 0 11.5-13.2z" fill="#25D366" stroke="#fff" stroke-width="1.2"/><path d="M12.4 12.6c.2-.4.4-.4.6-.4h.5c.2 0 .4 0 .5.4.2.4.6 1.5.7 1.6.1.2.1.3 0 .5-.1.2-.1.2-.3.4-.1.2-.3.3-.4.4-.1.2-.3.3-.1.6.2.3.7 1.2 1.5 1.9 1.1.9 2 1.2 2.3 1.4.3.1.5.1.6-.1.2-.2.7-.7.8-.9.2-.2.4-.2.6-.1l1.5.7c.2.1.4.2.4.3.1.2.1.8-.2 1.5-.3.7-1.4 1.3-2 1.4-.5.1-1.2.2-3.8-.8-3.2-1.3-5.2-4.4-5.4-4.6-.2-.2-1.3-1.6-1.3-3.1s.8-2.3 1.1-2.6z" fill="#fff"/></svg>
+</a>
+
+<!-- EmailJS: lets this static page deliver the contact form to your inbox without a traditional server -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<script>
+/* ---- nav scroll state + mobile toggle ---- */
+const nav = document.getElementById("siteNav");
+window.addEventListener("scroll", ()=>{ nav.classList.toggle("scrolled", window.scrollY > 20); }, { passive:true });
+const navToggle = document.getElementById("navToggle");
+const navLinks = document.getElementById("navLinks");
+navToggle.addEventListener("click", ()=> navLinks.classList.toggle("open"));
+navLinks.querySelectorAll("a").forEach(a=> a.addEventListener("click", ()=> navLinks.classList.remove("open")));
+
+/* ---- scroll reveal ---- */
+function setupReveal(){
+  const els = document.querySelectorAll(".reveal:not(.in)");
+  if ("IntersectionObserver" in window){
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{ if (entry.isIntersecting){ entry.target.classList.add("in"); io.unobserve(entry.target); } });
+    }, { threshold:0.12, rootMargin:"0px 0px -40px 0px" });
+    els.forEach(el=> io.observe(el));
+  } else { els.forEach(el=> el.classList.add("in")); }
+}
+
+/* ---- countries data (shared by route board + flag grid + ticker + marquee) ---- */
+const COUNTRIES = [
+  { flag:"🇵🇰", name:"Pakistan", code:"PAK" },
+  { flag:"🇦🇪", name:"UAE", code:"UAE" },
+  { flag:"🇸🇦", name:"Saudi Arabia", code:"KSA" },
+  { flag:"🇶🇦", name:"Qatar", code:"QAT" },
+  { flag:"🇰🇼", name:"Kuwait", code:"KWT" },
+  { flag:"🇴🇲", name:"Oman", code:"OMN" },
+  { flag:"🇧🇭", name:"Bahrain", code:"BHR" },
+  { flag:"🇬🇧", name:"United Kingdom", code:"UK" },
+  { flag:"🇺🇸", name:"United States", code:"USA" },
+  { flag:"🇨🇦", name:"Canada", code:"CAN" },
+  { flag:"🇦🇺", name:"Australia", code:"AUS" },
+  { flag:"🇳🇿", name:"New Zealand", code:"NZL" },
+  { flag:"🇩🇪", name:"Germany", code:"DEU" },
+  { flag:"🇫🇷", name:"France", code:"FRA" },
+  { flag:"🇮🇹", name:"Italy", code:"ITA" },
+  { flag:"🇪🇸", name:"Spain", code:"ESP" },
+  { flag:"🇳🇱", name:"Netherlands", code:"NLD" },
+  { flag:"🇮🇪", name:"Ireland", code:"IRL" },
+  { flag:"🇸🇪", name:"Sweden", code:"SWE" },
+  { flag:"🇳🇴", name:"Norway", code:"NOR" },
+  { flag:"🇹🇷", name:"Turkey", code:"TUR" },
+  { flag:"🇲🇾", name:"Malaysia", code:"MYS" },
+  { flag:"🇸🇬", name:"Singapore", code:"SGP" },
+  { flag:"🇯🇵", name:"Japan", code:"JPN" },
+  { flag:"🇰🇷", name:"South Korea", code:"KOR" },
+  { flag:"🇨🇳", name:"China", code:"CHN" },
+  { flag:"🇮🇳", name:"India", code:"IND" },
+  { flag:"🇿🇦", name:"South Africa", code:"ZAF" },
+  { flag:"🇳🇬", name:"Nigeria", code:"NGA" },
+  { flag:"🇰🇪", name:"Kenya", code:"KEN" },
+  { flag:"🇪🇬", name:"Egypt", code:"EGY" },
+  { flag:"🇧🇷", name:"Brazil", code:"BRA" },
+  { flag:"🇲🇽", name:"Mexico", code:"MEX" },
+];
+
+/* smaller subset for the hero globe so it doesn't get overcrowded */
+const ROUTE_COUNTRIES = [COUNTRIES[0],COUNTRIES[1],COUNTRIES[7],COUNTRIES[8],COUNTRIES[9],COUNTRIES[10],COUNTRIES[12],COUNTRIES[21],COUNTRIES[23],COUNTRIES[26]];
+
+function renderFlagGrid(){
+  document.getElementById("flagGrid").innerHTML = COUNTRIES.map((c,i)=>`
+    <div class="flag-card reveal" style="transition-delay:${(i%4)*45}ms">
+      <span class="fl">${c.flag}</span>
+      <div class="cn">${c.name}</div>
+      <div class="ct">${c.code}</div>
+    </div>`).join("");
+  setupReveal();
+}
+
+/* ---- ambient scrolling flag marquee ---- */
+function renderFlagMarquee(){
+  const track = document.getElementById("flagMarqueeTrack");
+  if (!track) return;
+  const items = COUNTRIES.map(c=>`<div class="flag-marquee-item"><span class="fl">${c.flag}</span><span>${c.name}</span></div>`).join("");
+  track.innerHTML = items + items; /* duplicated once for a seamless infinite loop */
+}
+
+/* ---- global reach ticker: flag + country name change every 1 second ---- */
+let tickerIndex = 0, tickerTimer = null;
+function paintTicker(){
+  const flagEl = document.getElementById("tickerFlag");
+  const nameEl = document.getElementById("tickerName");
+  const barEl = document.getElementById("tickerBarFill");
+  if (!flagEl || !nameEl) return;
+  const c = COUNTRIES[tickerIndex % COUNTRIES.length];
+  tickerIndex++;
+  flagEl.classList.remove("pop"); nameEl.classList.remove("pop");
+  if (barEl) barEl.classList.remove("run");
+  void flagEl.offsetWidth; /* restart CSS animation */
+  flagEl.textContent = c.flag;
+  nameEl.textContent = c.name;
+  flagEl.classList.add("pop"); nameEl.classList.add("pop");
+  if (barEl) { void barEl.offsetWidth; barEl.classList.add("run"); }
+}
+function setupCountryTicker(){
+  if (!document.getElementById("countryTicker")) return;
+  paintTicker();
+  if (tickerTimer) clearInterval(tickerTimer);
+  tickerTimer = setInterval(paintTicker, 1000);
+}
+
+/* ---- keep every "X countries" mention in sync with the data above ---- */
+function syncCountryCounts(){
+  document.querySelectorAll(".country-count").forEach(el=> el.textContent = COUNTRIES.length);
+  const flap1 = document.getElementById("flap1");
+  if (flap1) flap1.dataset.target = COUNTRIES.length;
+}
+
+/* ---- signature element: animated global route board (SVG) ---- */
+function buildRouteBoard(){
+  const el = document.getElementById("routeBoard");
+  const size = 520, cx = size/2, cy = size/2, r = 195;
+  let nodes = "", lines = "";
+  const list = ROUTE_COUNTRIES;
+  const n = list.length;
+  list.forEach((c,i)=>{
+    const angle = (Math.PI*2/n)*i - Math.PI/2;
+    const x = cx + r*Math.cos(angle);
+    const y = cy + r*Math.sin(angle);
+    const alt = i % 2 === 0 ? "" : "alt";
+    lines += `<path class="route-line ${alt}" d="M ${cx} ${cy} Q ${(cx+x)/2 + (y-cy)*0.15} ${(cy+y)/2 - (x-cx)*0.15} ${x} ${y}"/>`;
+    nodes += `<g transform="translate(${x},${y})">
+      <g class="route-node-inner">
+        <circle class="route-node-pulse" r="20" style="animation-delay:${i*0.3}s"/>
+        <circle class="route-node-bg" r="21"/>
+        <text class="route-flag" text-anchor="middle" y="6">${c.flag}</text>
+        <text class="route-label" text-anchor="middle" y="34">${c.code}</text>
+      </g>
+    </g>`;
+  });
+  el.innerHTML = `
+  <svg viewBox="0 0 ${size} ${size}">
+    <defs>
+      <radialGradient id="hubGlow" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stop-color="#c9a227" stop-opacity="0.35"/>
+        <stop offset="100%" stop-color="#c9a227" stop-opacity="0"/>
+      </radialGradient>
+    </defs>
+    <circle class="route-hub-glow" cx="${cx}" cy="${cy}" r="80"/>
+    <g class="route-orbit">
+      ${lines}
+      ${nodes}
+    </g>
+    <circle class="route-hub" cx="${cx}" cy="${cy}" r="46"/>
+    <text class="hub-label" text-anchor="middle" x="${cx}" y="${cy-4}">ALPHA</text>
+    <text class="hub-label" text-anchor="middle" x="${cx}" y="${cy+12}">CORE</text>
+  </svg>`;
+}
+
+/* ---- services ---- */
+const SERVICES = [
+  { title:"Executive Search", tag:"Leadership · Confidential", desc:"Discreet, research-led search for leadership and specialist roles that can't be filled from a job board." },
+  { title:"Bulk & Volume Recruitment", tag:"Operations · Retail · Manufacturing", desc:"Structured sourcing and screening pipelines built to fill 20, 200 or 2,000 roles on a deadline." },
+  { title:"Contract & Temporary Staffing", tag:"Flexible workforce", desc:"Vetted contractors and temporary staff on-boarded fast, with all compliance handled on our side." },
+  { title:"Overseas Recruitment & Visas", tag:"Cross-border hiring", desc:"End-to-end handling of work visas, contracts and relocation for candidates moving countries." },
+  { title:"HR Consulting & Workforce Planning", tag:"Strategy", desc:"Headcount planning, compensation benchmarking and org design for teams scaling across markets." },
+  { title:"Background Verification", tag:"Compliance", desc:"Employment history, education and reference checks completed before any offer goes out." },
+];
+function renderServices(){
+  document.getElementById("servicesGrid").innerHTML = SERVICES.map((s,i)=>`
+    <div class="svc-card reveal" style="transition-delay:${(i%3)*80}ms; background:var(--navy-800); border-color:var(--line-dark);">
+      <span class="svc-num" style="color:var(--gold-bright);">0${i+1}</span>
+      <h3 style="color:#fff;">${s.title}</h3>
+      <p style="color:rgba(246,243,236,.62); margin-top:8px;">${s.desc}</p>
+      <p style="font-family:var(--mono); font-size:11px; color:var(--teal); margin-top:12px; letter-spacing:.04em;">${s.tag.toUpperCase()}</p>
+    </div>`).join("");
+  setupReveal();
+}
+
+/* ---- process ---- */
+const PROCESS = [
+  { t:"Understand the role", d:"A short intake call to map must-haves, deal-breakers and timeline." },
+  { t:"Source candidates", d:"We tap our talent pool and active outreach across the relevant markets." },
+  { t:"Screen & shortlist", d:"Structured interviews and skills checks, cut down to your top 3–5." },
+  { t:"Interview & offer", d:"We coordinate scheduling, feedback loops and offer negotiation." },
+  { t:"Onboard & support", d:"Visa, relocation and contract support through day one and beyond." },
+];
+function renderProcess(){
+  document.getElementById("processRow").innerHTML = PROCESS.map((p,i)=>`
+    <div class="process-card reveal" style="transition-delay:${i*70}ms">
+      <span class="process-num">0${i+1}</span>
+      <h3>${p.t}</h3>
+      <p>${p.d}</p>
+    </div>`).join("");
+  setupReveal();
+}
+
+/* ---- split-flap animated stats ---- */
+function animateFlap(elId, target, suffix){
+  const el = document.getElementById(elId);
+  const duration = 1500;
+  const start = performance.now();
+  function tick(now){
+    const progress = Math.min((now-start)/duration, 1);
+    const eased = 1 - Math.pow(1-progress, 3);
+    const val = Math.round(target*eased);
+    el.innerHTML = String(val).split("").map(d=>`<span class="flap-digit">${d}</span>`).join("") + (suffix?`<span class="flap-suffix">${suffix}</span>`:"");
+    if (progress < 1) requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+}
+function setupStatsObserver(){
+  const band = document.querySelector(".stats-band");
+  let done = false;
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+      if (entry.isIntersecting && !done){
+        done = true;
+        document.querySelectorAll(".flap").forEach(f=> animateFlap(f.id, Number(f.dataset.target), f.dataset.suffix));
+        io.disconnect();
+      }
+    });
+  }, { threshold:0.4 });
+  io.observe(band);
+}
+
+/* ---- reviews (stored in this browser for demo purposes) ---- */
+const DEMO_REVIEWS = [
+  { name:"Hamza R.", rating:5, message:"Alpha Core placed 14 warehouse staff for us in under three weeks — visas included." },
+  { name:"Sarah K.", rating:5, message:"Got my UK work visa and job offer sorted at the same time. Genuinely stress-free." },
+  { name:"Omar F.", rating:4, message:"Executive search team found us a plant manager candidate no one else surfaced." },
+];
+function getReviews(){
+  try{
+    const saved = JSON.parse(localStorage.getItem("alphacore-reviews") || "null");
+    return saved && saved.length ? saved : DEMO_REVIEWS;
+  }catch(e){ return DEMO_REVIEWS; }
+}
+function renderReviews(){
+  const list = getReviews();
+  document.getElementById("reviewsGrid").innerHTML = list.map((r,i)=>`
+    <div class="review-card reveal" style="transition-delay:${(i%4)*70}ms">
+      <div class="stars">${"★".repeat(r.rating)}${"☆".repeat(5-r.rating)}</div>
+      <p class="body-text">"${r.message}"</p>
+      <div class="review-who">
+        <div class="review-avatar">${(r.name||"?").trim().charAt(0).toUpperCase()}</div>
+        <span style="font-weight:600; font-size:14px;">${r.name}</span>
+      </div>
+    </div>`).join("");
+  setupReveal();
+}
+
+let spotlightTimer = null, spotlightIndex = 0;
+function paintSpotlight(){
+  const list = getReviews();
+  const quoteEl = document.getElementById("spotlightQuote");
+  const dotsEl = document.getElementById("spotlightDots");
+  if (!quoteEl || !list.length) return;
+  if (spotlightIndex >= list.length) spotlightIndex = 0;
+  const r = list[spotlightIndex];
+  quoteEl.style.opacity = 0;
+  setTimeout(()=>{
+    quoteEl.innerHTML = `<div class="stars">${"★".repeat(r.rating)}${"☆".repeat(5-r.rating)}</div>"${r.message}"<span class="who">— ${r.name}</span>`;
+    quoteEl.style.opacity = 1;
+  }, 220);
+  dotsEl.innerHTML = list.map((_,i)=>`<span data-i="${i}" class="${i===spotlightIndex?'active':''}"></span>`).join("");
+}
+function setupSpotlight(){
+  paintSpotlight();
+  function start(){ stop(); spotlightTimer = setInterval(()=>{ spotlightIndex = (spotlightIndex+1) % Math.max(getReviews().length,1); paintSpotlight(); }, 4500); }
+  function stop(){ if (spotlightTimer) clearInterval(spotlightTimer); }
+  start();
+  const box = document.getElementById("testimonialSpotlight");
+  box.addEventListener("mouseenter", stop);
+  box.addEventListener("mouseleave", start);
+  document.getElementById("spotlightDots").addEventListener("click",(e)=>{
+    if (e.target.dataset.i===undefined) return;
+    spotlightIndex = Number(e.target.dataset.i); paintSpotlight(); start();
+  });
+}
+
+let selectedRating = 5;
+function paintStars(){
+  document.querySelectorAll("#starInput span").forEach(s=> s.classList.toggle("active", Number(s.dataset.v) <= selectedRating));
+}
+document.getElementById("starInput").addEventListener("click",(e)=>{
+  if (e.target.dataset.v){ selectedRating = Number(e.target.dataset.v); paintStars(); }
+});
+document.getElementById("reviewForm").addEventListener("submit",(e)=>{
+  e.preventDefault();
+  const name = document.getElementById("reviewName").value.trim();
+  const message = document.getElementById("reviewMessage").value.trim();
+  if (!name || !message) return;
+  const updated = [{ name, rating:selectedRating, message }, ...getReviews()];
+  localStorage.setItem("alphacore-reviews", JSON.stringify(updated));
+  document.getElementById("reviewName").value = "";
+  document.getElementById("reviewMessage").value = "";
+  selectedRating = 5; paintStars();
+  const status = document.getElementById("reviewStatus");
+  status.textContent = "Thank you — your review has been posted!";
+  status.classList.add("show");
+  renderReviews(); spotlightIndex = 0; paintSpotlight();
+});
+paintStars();
+
+/* ==================================================================
+   📧 EMAIL BACKEND SETUP (EmailJS) — required for the contact form
+   to land in your inbox automatically. Static HTML/JS can't send
+   real email by itself (browsers block that for security), so this
+   uses EmailJS as a free, no-server-needed relay. ~5 minute setup:
+
+   1) Create a free account at https://www.emailjs.com
+   2) Email Services → Add New Service → connect Gmail
+      (techsphere229@gmail.com) → copy the SERVICE ID.
+   3) Email Templates → Create Template → use variables named
+      {{from_name}}, {{from_email}}, {{message}} in the body,
+      and set the "To email" field to techsphere229@gmail.com
+      → copy the TEMPLATE ID.
+   4) Account → General → copy your PUBLIC KEY.
+   5) Paste all three values below.
+
+   Until these are filled in, the form still works for visitors —
+   it just opens their own email app instead of sending silently.
+   ================================================================== */
+const EMAILJS_PUBLIC_KEY  = "YOUR_PUBLIC_KEY";
+const EMAILJS_SERVICE_ID  = "YOUR_SERVICE_ID";
+const EMAILJS_TEMPLATE_ID = "YOUR_TEMPLATE_ID";
+const NOTIFY_EMAIL = "techsphere229@gmail.com";
+const emailBackendReady = () => window.emailjs && EMAILJS_PUBLIC_KEY !== "YOUR_PUBLIC_KEY";
+if (window.emailjs && emailBackendReady()) emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
+
+/* ---- contact form: sends to your inbox via EmailJS, with a mailto fallback ---- */
+document.getElementById("contactForm").addEventListener("submit",(e)=>{
+  e.preventDefault();
+  const form = e.target;
+  const status = document.getElementById("contactStatus");
+  const btn = form.querySelector("button[type='submit']");
+  const name = document.getElementById("cName").value.trim();
+  const email = document.getElementById("cEmail").value.trim();
+  const message = document.getElementById("cMessage").value.trim();
+  if (!name || !email || !message) return;
+
+  status.classList.remove("show");
+
+  if (!emailBackendReady()){
+    /* fallback: opens the visitor's own email app pre-filled, so the form still works before EmailJS is configured */
+    const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`);
+    window.location.href = `mailto:${NOTIFY_EMAIL}?subject=${encodeURIComponent("New website inquiry from " + name)}&body=${body}`;
+    status.textContent = "Opening your email app to send this. (Set up EmailJS — see the code comments — so this happens automatically instead.)";
+    status.classList.add("show");
+    return;
+  }
+
+  const originalLabel = btn.textContent;
+  btn.disabled = true; btn.textContent = "Sending...";
+  emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
+    from_name: name, from_email: email, message: message, to_email: NOTIFY_EMAIL
+  }).then(()=>{
+    status.textContent = "Thanks — we've received your message and will reply soon.";
+    status.classList.add("show");
+    form.reset();
+  }).catch((err)=>{
+    console.error("EmailJS error:", err);
+    status.textContent = "Something went wrong sending that. Please email us directly at " + NOTIFY_EMAIL + ".";
+    status.classList.add("show");
+  }).finally(()=>{
+    btn.disabled = false; btn.textContent = originalLabel;
+  });
+});
+
+/* ---- init ---- */
+syncCountryCounts();
+buildRouteBoard();
+renderFlagGrid();
+renderFlagMarquee();
+renderServices();
+renderProcess();
+renderReviews();
+setupSpotlight();
+setupCountryTicker();
+setupReveal();
+setupStatsObserver();
+</script>
+</body>
+</html>
